@@ -1,71 +1,97 @@
 #include<iostream>
 class Student {
-public:
+private:
 	std::string name;
 	std::string surname;
 	int group;
 	int xp; /*от 0 до 100*/
 	int money; /*от 0*/
 	float Time; /*от 0 до 24*/
+public:
+	int getgroup(int group) {
+		return group;
+	}
+	int getxp(int xp) {
+		return xp;
+	}
+	int getmoney(int money) {
+		return money;
+	}
+	float gettime(float time) {
+		return time;
+	}
+	std::string getname(std::string name) {
+		return name;
+	}
+	std::string getsurname(std::string surname) {
+		return surname;
+	}
+
+	int group1 = getgroup(group);
+	int xp1 = getxp(xp);
+	int money1 = getmoney(money);
+	float time1 = gettime(time);
+	std::string name1 = getname(name);
+	std::string surname1 = getsurname(surname);
 
 	int mark;
 	void XPNorm(){
-		if (xp < 0) {
-			xp = 0;
+		if (xp1 < 0) {
+			xp1 = 0;
 			std::cout << "Gone to akadem"<<std::endl;
 		}
-		if (xp > 100) {
-			xp = 100;
+		if (xp1 > 100) {
+			xp1 = 100;
 		}
 	}
 	void MoneyNorm() {
-		if (money < 0) {
-			money = 0;
+		if (money1 < 0) {
+			money1 = 0;
 		}
 	}
 	void TimeNorm() {
-		if (Time < 0) {
-			Time = 0;
+		if (Time1 < 0) {
+			Time1 = 0;
 			std::cout << "R.I.P."<<std::endl;
 		}
-		if (Time > 24) {
-			Time = 24;
+		if (Time1 > 24) {
+			Time1 = 24;
 		}
 	}
 	void Food() {
-		money -= 300;
-		xp += 10;
-		Time -= 0.5;
+		money1 -= 300;
+		xp1 += 10;
+		Time1 -= 0.5;
 		MoneyNorm();
 		XPNorm();
 		TimeNorm();
 	}
 	void Study(int timeofstudy) {
-		xp -= 100 / 24 * timeofstudy;
-		Time -= timeofstudy;
+		xp1 -= 100 / 24 * timeofstudy;
+		Time1 -= timeofstudy;
 		XPNorm();
 		TimeNorm();
 	}
 	void Sleep(int timeofsleep) {
-		xp += 10 * timeofsleep;
-		Time -= timeofsleep;
+		xp1 += 10 * timeofsleep;
+		Time1 -= timeofsleep;
 		XPNorm();
 		TimeNorm();
 	}
 	void Work(int timeofwork) {
-		xp -= 10 * timeofwork;
-		money += 1000 * timeofwork;
+		xp1 -= 10 * timeofwork;
+		money1 += 1000 * timeofwork;
 		XPNorm();
 		MoneyNorm();
 	}
 	void Entertainment(int timeofentertainment) {
-		xp += 15 * timeofentertainment;
-		money -= 500 * timeofentertainment;
+		xp1 += 15 * timeofentertainment;
+		money1 -= 500 * timeofentertainment;
 		XPNorm();
 		MoneyNorm();
 	}
 };
 int main()
 {
-	
+	Student s{ "AAAAAA"; "BBBBB"; 304; 100; 10000; 24.0; };
 }
